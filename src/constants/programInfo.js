@@ -135,7 +135,7 @@ export const programLoanInfo = [
 	// update with program names and corresponding loan URLs with market segment code from Master Loan Parameters
 	{
 		name: 'Cyber Bootcamp',
-		url: 'https://my.skills.fund/application?lenderCode=SKFSTT18',
+		url: 'https://my.skills.fund/application?lenderCode=SKFSSDCB19',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 11910,
