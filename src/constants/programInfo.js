@@ -56,7 +56,7 @@ export const faq = {
 	immediateRepayment: false, // true if immediate repayment is an option
 	multipleLoanLengths: true, // true if 36 and 60 month options are both available
 	multipleLoanTypes: false, // true if both IR and IO are available
-	multiPrograms: false, // only true if there are multiple programs
+	multiPrograms: true, // only true if there are multiple programs
 	onlinePrograms: false, // true if at least one program is remote/online
 	schoolHQState: 'WA',
 	origFee: 0.04,
@@ -77,6 +77,12 @@ export const faq = {
 			maxAmount: '$11,910',
 			col: false,
 			colAmount: '$6,000'
+		},
+		{
+			programName: 'The University of San Diego Hybrid Coding Bootcamp',
+			maxAmount: '$11,910',
+			col: false,
+			colAmount: '$6,000'
 		}
 	]
 };
@@ -93,11 +99,11 @@ export const schoolURL = 'https://pce.sandiego.edu/'; // update with url of scho
 
 export const skfURL = 'https://usdbootcamp.skills.fund'; // update with Skills Fund url
 
-export const headline = 'Learn Cybersecurity at the University of San Diego'; // update headline as appropriate
+export const headline = 'Learn to Code at the University of San Diego'; // update headline as appropriate
 
 export const leadContent = {
 	header: 'Your last step on the path toward changing your career',
-	paragraph: `${schoolName} designs its program to prepare its students with a foundation for a career in Cybersecurity. ${schoolName} partners with Skills Fund to offer tuition${faq.costOfLiving
+	paragraph: `${schoolName} designs its programs to prepare students with a foundation for a career in cybersecurity and software development. ${schoolName} partners with Skills Fund to offer tuition${faq.costOfLiving
 		? ' and cost of living'
 		: ''} financing so more students like you can access their program.`
 };
@@ -106,7 +112,8 @@ export const threeStepCardText = {
 	step1: '',
 	step2: {
 		header: 'select your program',
-		text: 'The University of San Diego partners with Fullstack Academy to offer its Cyber Bootcamp.'
+		text:
+			'The University of San Diego partners with Fullstack Academy to offer its Cyber Bootcamp and Hybrid Coding Bootcamp.'
 	},
 	step3: `You'll be on your way to an exciting career in tech as part of ${schoolName}'s powerful network.`
 };
@@ -115,9 +122,9 @@ export const netlifyFormName = 'fullstackusd_contact';
 
 export const GATracking = 'UA-68312423-1';
 
-export const hubspotFormId = 'acf2351e-aef0-4533-adac-e67cc33bb2da'; // create Hubspot form, get form id after publishing
+export const hubspotFormId = 'f7cb621f-258f-4583-bbef-a327e11ecdfe'; // create Hubspot form, get form id after publishing
 
-export const selectAProgram = 'program_name'; // update school name to match form field on Hubspot, *** change to "program_name" if only one program ***"
+export const selectAProgram = 'select_a_fullstackusd_program'; // update school name to match form field on Hubspot, *** change to "program_name" if only one program ***"
 
 // ***** END GENERAL SCHOOL INFO *****
 
@@ -201,17 +208,17 @@ export const programLoanInfo = [
 		]
 	},
 	{
-		name: 'Program 2',
-		url: 'https://my.skills.fund/application?lenderCode=LENDERCODE2',
+		name: 'Hybrid Coding Bootcamp',
+		url: 'https://my.skills.fund/application?lenderCode=SKFSHSDCB19',
 		loanInfo: {
 			// match loanInfo in first metro below
-			maxLoanAmt: 10995,
+			maxLoanAmt: 11910,
 			loanTerm36: true,
 			loanTerm60: true,
 			'0': {
-				k: 5,
-				apr36: 11.16,
-				apr60: 12.51
+				k: 8,
+				apr36: 10.94,
+				apr60: 12.41
 			},
 			'1': null
 		},
@@ -224,13 +231,13 @@ export const programLoanInfo = [
 				location: 'Metro 1',
 				loanInfo: {
 					// match loanInfo to Program 2 loanInfo above
-					maxLoanAmt: 10995,
+					maxLoanAmt: 11910,
 					loanTerm36: true,
 					loanTerm60: true,
 					'0': {
-						k: 5,
-						apr36: 11.16,
-						apr60: 12.51
+						k: 8,
+						apr36: 10.94,
+						apr60: 12.41
 					},
 					'1': null
 				}
@@ -250,89 +257,12 @@ export const programLoanInfo = [
 				}
 			}
 		]
-	},
-	{
-		name: 'Program 3',
-		url: 'https://my.skills.fund/application?lenderCode=LENDERCODE3',
-		loanInfo: {
-			// match loanInfo in first metro below
-			maxLoanAmt: 15995,
-			loanTerm36: true,
-			loanTerm60: true,
-			'0': {
-				k: 5,
-				apr36: 11.16,
-				apr60: 12.51
-			},
-			'1': {
-				apr36: 11.25,
-				apr60: 12.55
-			}
-		},
-		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
-		showMetros: false,
-		showLoanTypes: false,
-		locations: [ 'Metro A', 'Metro B', 'Metro C' ],
-		metros: [
-			{
-				location: 'Metro A',
-				loanInfo: {
-					// match loanInfo to Program 3 loanInfo above
-					maxLoanAmt: 15995,
-					loanTerm36: true,
-					loanTerm60: true,
-					'0': {
-						k: 5,
-						apr36: 11.16,
-						apr60: 12.51
-					},
-					'1': {
-						apr36: 11.25,
-						apr60: 12.55
-					}
-				}
-			},
-			{
-				location: 'Metro B',
-				loanInfo: {
-					maxLoanAmt: 15545,
-					loanTerm36: true,
-					loanTerm60: true,
-					'0': {
-						k: 5,
-						apr36: 11.16,
-						apr60: 12.51
-					},
-					'1': {
-						apr36: 11.25,
-						apr60: 12.55
-					}
-				}
-			},
-			{
-				location: 'Metro C',
-				loanInfo: {
-					maxLoanAmt: 20545,
-					loanTerm36: true,
-					loanTerm60: true,
-					'0': {
-						k: 5,
-						apr36: 11.16,
-						apr60: 12.51
-					},
-					'1': {
-						apr36: 11.25,
-						apr60: 12.55
-					}
-				}
-			}
-		]
 	}
 ];
 
 // ***** BEGIN LOAN CALC TEXT INFO *****
 export const programMaxText =
-	"Choose the loan amount that works best for you. Borrow up to $11,910 for the University of San Diego's Cyber Bootcamp tuition.";
+	"Choose the loan amount that works best for you. Borrow up to $11,910 for the University of San Diego's Cyber Bootcamp or Hybrid Coding Bootcamp tuition.";
 
 export const paymentTable = {
 	headers: [ 'Program', 'Tuition', 'Cost of Living', 'Max Total' ],
