@@ -93,7 +93,7 @@ export const faq = {
 
 export const schoolLogo = logo; // go to header.js if height needs adjustment
 
-export const schoolName = 'USD Cyber Bootcamp';
+export const schoolName = 'USD Bootcamp';
 
 export const schoolURL = 'https://pce.sandiego.edu/'; // update with url of school's website
 
@@ -103,9 +103,7 @@ export const headline = 'Learn to Code at the University of San Diego'; // updat
 
 export const leadContent = {
 	header: 'Your last step on the path toward changing your career',
-	paragraph: `${schoolName} designs its programs to prepare students with a foundation for a career in cybersecurity and software development. ${schoolName} partners with Skills Fund to offer tuition${faq.costOfLiving
-		? ' and cost of living'
-		: ''} financing so more students like you can access their program.`
+	paragraph: `USD Bootcamps are designed to prepare students with a foundation for a career in cybersecurity or software development. USD Bootcamps partner with Skills Fund to offer tuition financing so more students like you can access their program.`
 };
 
 export const threeStepCardText = {
@@ -113,7 +111,7 @@ export const threeStepCardText = {
 	step2: {
 		header: 'select your program',
 		text:
-			'The University of San Diego partners with Fullstack Academy to offer its Cyber Bootcamp and Hybrid Coding Bootcamp.'
+			'The University of San Diego partners with Fullstack Academy to offer its Cyber Bootcamp and Coding Bootcamp.'
 	},
 	step3: `You'll be on your way to an exciting career in tech as part of ${schoolName}'s powerful network.`
 };
