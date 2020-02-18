@@ -83,6 +83,12 @@ export const faq = {
 			maxAmount: '$11,910',
 			col: false,
 			colAmount: '$6,000'
+		},
+		{
+			programName: 'The University of San Diego Coding Bootcamp',
+			maxAmount: '$11,910',
+			col: false,
+			colAmount: '$6,000'
 		}
 	]
 };
@@ -111,7 +117,7 @@ export const threeStepCardText = {
 	step2: {
 		header: 'select your program',
 		text:
-			'The University of San Diego partners with Fullstack Academy to offer its Cyber Bootcamp and Coding Bootcamp.'
+			'The University of San Diego partners with Fullstack Academy to offer its Cyber Bootcamp, Coding Bootcamp, and Hybrid Coding Bootcamp.'
 	},
 	step3: `You'll be on your way to an exciting career in tech as part of ${schoolName}'s powerful network.`
 };
@@ -141,6 +147,73 @@ export const programLoanInfo = [
 	{
 		name: 'Cyber Bootcamp',
 		url: 'https://my.skills.fund/application?lenderCode=SKFSSDCB19',
+		loanInfo: {
+			// match loanInfo in first metro below
+			maxLoanAmt: 11910,
+			loanTerm36: true,
+			loanTerm60: true,
+			'0': {
+				// interest-only
+				k: 8,
+				apr36: 10.94,
+				apr60: 12.41
+			},
+			'1': null // immediate repayment
+		},
+		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
+		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+		showLoanTypes: false, // true if both IR and IO are available
+		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
+		metros: [
+			// list in same order as locations array above
+			{
+				location: 'Metro 1',
+				loanInfo: {
+					// // match loanInfo to Program 1 above
+					maxLoanAmt: 11910,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 8,
+						apr36: 10.94,
+						apr60: 12.41
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 2',
+				loanInfo: {
+					maxLoanAmt: 15545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 3',
+				loanInfo: {
+					maxLoanAmt: 20545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			}
+		]
+	},
+	{
+		name: 'Coding Bootcamp',
+		url: 'https://my.skills.fund/application?lenderCode=SKFSUSDCB19',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 11910,
@@ -260,7 +333,7 @@ export const programLoanInfo = [
 
 // ***** BEGIN LOAN CALC TEXT INFO *****
 export const programMaxText =
-	"Choose the loan amount that works best for you. Borrow up to $11,910 for the University of San Diego's Cyber Bootcamp or Hybrid Coding Bootcamp tuition.";
+	"Choose the loan amount that works best for you. Borrow up to $11,910 for the University of San Diego's Cyber Bootcamp, Coding Bootcamp, or Hybrid Coding Bootcamp tuition.";
 
 export const paymentTable = {
 	headers: [ 'Program', 'Tuition', 'Cost of Living', 'Max Total' ],
